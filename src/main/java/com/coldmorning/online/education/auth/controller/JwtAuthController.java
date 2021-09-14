@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coldmorning.online.education.auth.model.login.AuthRequest;
+import com.coldmorning.online.education.auth.model.request.AuthRequest;
 import com.coldmorning.online.education.auth.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 

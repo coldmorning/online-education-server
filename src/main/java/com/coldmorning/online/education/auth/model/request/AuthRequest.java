@@ -1,4 +1,4 @@
-package com.coldmorning.online.education.auth.model.login;
+package com.coldmorning.online.education.auth.model.request;
 
 import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
