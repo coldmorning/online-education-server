@@ -50,10 +50,27 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-
+    
+  rabbitmq:
+    image: rabbitmq:3.8.22-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - C:\Users\yulia\Desktop\docker\rabbitmq\data/:/var/lib/rabbitmq/
+        - C:\Users\yulia\Desktop\docker\rabbitmq\log/rabbitmq
+    networks:
+        - rabbitmq_net
+    environment:
+        RABBITMQ_DEFAULT_PASS: admin
+        RABBITMQ_DEFAULT_USER: admin
+        RABBITMQ_DEFAULT_VHOST: 'my_vhost'
 networks:
   postgres:
     driver: bridge
   redis:
+    driver: bridge
+  rabbitmq_net:
     driver: bridge
 
