@@ -15,13 +15,14 @@ public class ResultResponse<T> {
     private T data;
 
 
-    ResultResponse (ResultCode resultCode){
+
+    public ResultResponse(ResultCode resultCode){
         this.msg = resultCode.msg;
         this.code = resultCode.code;
         this.httpStatus = resultCode.httpStatus;
     }
 
-    ResultResponse (T data,ResultCode resultCode){
+    public ResultResponse (T data,ResultCode resultCode){
         this.data = data;
         this.msg = resultCode.msg;
         this.code = resultCode.code;
