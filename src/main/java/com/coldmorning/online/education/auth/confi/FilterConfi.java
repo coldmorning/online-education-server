@@ -4,7 +4,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.coldmorning.online.education.auth.filter.JwtAuthorFilter;
+import com.coldmorning.online.education.auth.filter.JwtAuthFilter;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
@@ -12,14 +12,14 @@ import lombok.extern.slf4j.Slf4j;
 public class FilterConfi {
 	
 	@Bean
-	public JwtAuthorFilter JwtFilter() {
-		return new JwtAuthorFilter();
+	public JwtAuthFilter JwtFilter() {
+		return new JwtAuthFilter();
 	}
 	@Bean
 	public FilterRegistrationBean logApiFilter() {
-		FilterRegistrationBean<JwtAuthorFilter> bean = new FilterRegistrationBean<>();
+		FilterRegistrationBean<JwtAuthFilter> bean = new FilterRegistrationBean<>();
 		bean.addUrlPatterns("/*");
-		bean.setFilter(new JwtAuthorFilter());
+		bean.setFilter(new JwtAuthFilter());
 		bean.setName("JwtAuthorFilter");
 		bean.setOrder(1);
 		return bean;

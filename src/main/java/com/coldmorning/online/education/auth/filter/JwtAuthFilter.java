@@ -18,7 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 @Slf4j
 @WebFilter(filterName = "JwtAuthorFilter", urlPatterns = "/api/*")
-public class JwtAuthorFilter extends OncePerRequestFilter {
+public class JwtAuthFilter extends OncePerRequestFilter {
 	
 	@Value("${jwt.secret}")
 	private String secret;
