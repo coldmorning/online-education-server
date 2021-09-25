@@ -1,15 +1,25 @@
 server:
     port:
       8083
-jwt:
-  secret: secret
 
+
+#first db
 spring:
   jpa:
     hibernate:
       ddl-auto: create
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
   datasource:
-    url: "jdbc:postgresql://localhost:5432/root"
-    username: root
-    password: root
+    first:
+      jdbc-url: "jdbc:postgresql://localhost:5432/root"
+      username: root
+      password: root
+
+jwt:
+  header: Authorization
+  #base64-secret: secret
+  base64-secret: =  c2VjcmV0
+  # token is valid 4*60*60*1000, 4 hours
+  expTime: 14400000
+

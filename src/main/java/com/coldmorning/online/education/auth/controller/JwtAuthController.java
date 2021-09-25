@@ -3,7 +3,6 @@ package com.coldmorning.online.education.auth.controller;
 import javax.validation.Valid;
 
 import com.coldmorning.online.education.auth.model.request.AuthRegisterRequest;
-import com.coldmorning.online.education.auth.util.response.ResultResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coldmorning.online.education.auth.model.request.AuthRequest;
-import com.coldmorning.online.education.auth.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -21,14 +19,14 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value ="/api/v1/auth")
 public class JwtAuthController {
 	
-	@Value("${jwt.secret}")
-	private String secret;
 
-    @PostMapping
+
+
+    @PostMapping(value = "")
     public ResponseEntity<?> auth(@Valid @RequestBody AuthRequest request){
        log.info("auth");
-       String jwt = JwtUtil.sign(request.getUsername(),secret);
-       return ResponseEntity.ok(jwt);
+
+       return ResponseEntity.ok("");
     }
 
     @PostMapping(value = "/register")
