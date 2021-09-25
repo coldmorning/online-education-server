@@ -16,6 +16,6 @@ import java.util.Optional;
 
 @Repository
 public interface AuthRepository extends JpaRepository<User, Long> {
-    @Query("SELECT u FROM User u WHERE u.email = ?1 and b.is_delete = 0")
-    User findByEmail(String email);
+    @Query(value = "SELECT * FROM User u WHERE u.email = ?1 and u.delete_time is null",nativeQuery = true)
+    Optional<User> findByEmail(String email);
 }
