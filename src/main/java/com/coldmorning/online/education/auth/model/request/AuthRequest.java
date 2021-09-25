@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AuthRequest {
-	@NotEmpty(message = "username can not be empty")
-	private String username;
+	@NotEmpty(message = "email can not be empty")
+	private String email;
 	@NotEmpty(message = "password can not be empty")
 	private String password;
 }

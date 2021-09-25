@@ -11,19 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 public class FilterConfi {
 	
-	@Bean
-	public JwtAuthFilter JwtFilter() {
-		return new JwtAuthFilter();
-	}
-	@Bean
-	public FilterRegistrationBean logApiFilter() {
-		FilterRegistrationBean<JwtAuthFilter> bean = new FilterRegistrationBean<>();
-		bean.addUrlPatterns("/*");
-		bean.setFilter(new JwtAuthFilter());
-		bean.setName("JwtAuthorFilter");
-		bean.setOrder(1);
-		return bean;
-		
-	}
+
+
 	
 }
